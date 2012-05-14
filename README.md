@@ -254,35 +254,18 @@ foo(4).bar(8)
 
 obj.value(10, 20) / obj.value(20, 10)
 
-print inspect value
+print inspect(value) # Use parentheses in the inner function call when calls are nested.
 
 new Tag(new Value(a, b), new Arg(c))
 ```
 
-You will sometimes see parentheses used to group functions (instead of being used to group function parameters). Examples of using this style (hereafter referred to as the "function grouping style"):
+Use parentheses for function arguments instead of wrapping the whole function call in parentheses
+(so called "function grouping style").
 
 ```coffeescript
-($ '#selektor').addClass 'klass'
-
-(foo 4).bar 8
+($ '#selektor').addClass 'klass' # No
+$('#selektor').addClass 'klass' # Yes
 ```
-
-This is in contrast to:
-
-```coffeescript
-$('#selektor').addClass 'klass'
-
-foo(4).bar 8
-```
-
-In cases where method calls are being chained, some adopters of this style prefer to use function grouping for the initial call only:
-
-```coffeescript
-($ '#selektor').addClass('klass').hide() # Initial call only
-(($ '#selektor').addClass 'klass').hide() # All calls
-```
-
-The function grouping style is not recommended. However, **if the function grouping style is adopted for a particular project, be consistent with its usage.**
 
 <a name="strings"/>
 ## Strings
