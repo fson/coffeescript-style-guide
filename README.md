@@ -60,7 +60,7 @@ Limit all lines to a maximum of 79 characters.
 
 Separate top-level function and class definitions with a single blank line.
 
-Separate method definitions inside of a class with a single blank line.
+Separate method definitions inside of a class with a single blank line. Use a single blank line also before the first method of a class.
 
 Use a single blank line within the bodies of methods or functions in cases where this improves readability (e.g., for the purpose of delineating logical sections).
 
