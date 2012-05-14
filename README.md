@@ -282,7 +282,7 @@ Prefer single quoted strings (`''`) instead of double quoted (`""`) strings, unl
 <a name="conditionals"/>
 ## Conditionals
 
-Favor `unless` over `if` for negative conditions.
+Favor `unless` over `if not` for negative conditions.
 
 Instead of using `unless...else`, use `if...else`:
 
