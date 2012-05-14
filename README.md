@@ -239,7 +239,37 @@ bar = -> # Yes
 bar = () -> # No
 ```
 
-In cases where method calls are being chained and the code does not fit on a single line, each call should be placed on a separate line and indented by one level (i.e., two spaces), with a leading `.`.
+When calling functions, omit the parentheses when it's possible without sacrificing readability.
+Keeping in mind that "readability" can be subjective, the following examples
+demonstrate cases where parentheses have been omitted or included in a way that is readable
+in our opinion.
+```coffeescript
+foo() # Call functions without arguments like this.
+
+baz 12
+
+brush.ellipse x: 10, y: 20
+
+foo(4).bar 8
+
+obj.value(10, 20) / obj.value(20, 10)
+
+print (inspect value) # Use parentheses to make nested function calls more readable.
+
+new Tag(new Value(a, b), new Arg(c))
+```
+
+For chaining, use parentheses for function arguments instead of wrapping the
+whole function call in parentheses, since this keeps readable even if the chain is long.
+
+```coffeescript
+$('#selektor').addClass 'klass' # Yes
+($ '#selektor').addClass 'klass' # No
+```
+
+In cases where method calls are being chained and the code does not fit on
+a single line, each call should be placed on a separate line and indented
+by one level (i.e., two spaces), with a leading `.`.
 
 ```coffeescript
 [1..3]
@@ -247,30 +277,6 @@ In cases where method calls are being chained and the code does not fit on a sin
   .concat([10..12])
   .filter((x) -> x < 11)
   .reduce((x, y) -> x + y)
-```
-
-When calling functions, choose to omit or include parentheses in such a way that optimizes for readability. Keeping in mind that "readability" can be subjective, the following examples demonstrate cases where parentheses have been omitted or included in a manner that the community deems to be optimal:
-
-```coffeescript
-baz 12
-
-brush.ellipse x: 10, y: 20 # Braces can also be omitted or included for readability
-
-foo(4).bar(8)
-
-obj.value(10, 20) / obj.value(20, 10)
-
-print inspect(value) # Use parentheses in the inner function call when calls are nested.
-
-new Tag(new Value(a, b), new Arg(c))
-```
-
-Use parentheses for function arguments instead of wrapping the whole function call in parentheses
-(so called "function grouping style").
-
-```coffeescript
-($ '#selektor').addClass 'klass' # No
-$('#selektor').addClass 'klass' # Yes
 ```
 
 <a name="strings"/>
