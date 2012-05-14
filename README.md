@@ -114,11 +114,17 @@ Additional recommendations:
 
     - assignment: `=`
 
-        - _Note that this also applies when indicating default parameter value(s) in a function declaration_
+        ```coffeescript
+        foo = 'bar' # Yes
+        foo='bar' # No
+        ```
+
+
+        - _Except don't use spaces around the = sign when used to indicate a default parameter value._
 
            ```coffeescript
-           test: (param = null) -> # Yes
-           test: (param=null) -> # No
+           test: (param=null) -> # Yes
+           test: (param = null) -> # No
            ```
 
     - augmented assignment: `+=`, `-=`, etc.
