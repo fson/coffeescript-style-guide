@@ -361,13 +361,10 @@ Use annotations when necessary to describe a specific action that must be taken 
 
 Write the annotation on the line immediately above the code that the annotation is describing.
 
-The annotation keyword should be followed by a colon and a space, and a descriptive note.
-
-```coffeescript
-  # FIXME: The client's current state should *not* affect payload processing.
-  resetClientState()
-  processPayload()
-```
+The annotation keyword should be followed by a colon and a space, a descriptive note
+and a ticket number in the issue tracker for taking the required action. The ticket
+MUST be created when annotations are used. Generally avoiding hacks should be preferred
+over adding annotations for them.
 
 If multiple lines are required by the description, indent subsequent lines with two spaces:
 
@@ -376,16 +373,19 @@ If multiple lines are required by the description, indent subsequent lines with 
   #   range, or throw an exception.
   analyze()
 ```
+Do not use annotations like `FIXME` to justify broken functionality.
+
+```coffeescript
+  # FIXME: The client's current state should *not* affect payload processing. # No
+  resetClientState()
+  processPayload()
+```
 
 Annotation types:
 
 - `TODO`: describe missing functionality that should be added at a later date
-- `FIXME`: describe broken code that must be fixed
 - `OPTIMIZE`: describe code that is inefficient and may become a bottleneck
 - `HACK`: describe the use of a questionable (or ingenious) coding practice
-- `REVIEW`: describe code that should be reviewed to confirm implementation
-
-If a custom annotation is required, the annotation should be documented in the project's README.
 
 <a name="miscellaneous"/>
 ## Miscellaneous
