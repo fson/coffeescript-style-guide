@@ -97,8 +97,8 @@ Avoid extraneous whitespace in the following situations:
 - Immediately inside parentheses, brackets or braces
 
     ```coffeescript
-       ($ 'body') # Yes
-       ( $ 'body' ) # No
+       $('body') # Yes
+       $( 'body' ) # No
     ```
 
 - Immediately before a comma
