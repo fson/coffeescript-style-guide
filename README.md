@@ -232,7 +232,7 @@ foo = (arg1, arg2) -> # Yes
 foo = (arg1, arg2)-> # No
 ```
 
-Do not use parentheses when declaring functions that take no arguments:
+Use parentheses when declaring functions that take no arguments:
 
 ```coffeescript
 bar = () -> # Yes
