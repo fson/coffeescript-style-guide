@@ -235,8 +235,8 @@ foo = (arg1, arg2)-> # No
 Do not use parentheses when declaring functions that take no arguments:
 
 ```coffeescript
-bar = -> # Yes
-bar = () -> # No
+bar = () -> # Yes
+bar = -> # No
 ```
 
 When calling functions, omit the parentheses when it's possible without sacrificing readability.
@@ -252,11 +252,17 @@ brush.ellipse x: 10, y: 20
 
 foo(4).bar 8
 
-obj.value(10, 20) / obj.value(20, 10)
+coolEl = $ '#cool'
 
 print (inspect value) # Use parentheses to make nested function calls more readable.
 
 new Tag(new Value(a, b), new Arg(c))
+```
+
+Do not omit the parentheses, if that would just add another pair of them around the expression.
+Mathematical expressions usually are more readable without omitting argument parentheses.
+```
+obj.value(10, 20) / obj.value(20, 10 + 1) * 5
 ```
 
 For chaining, use parentheses for function arguments instead of wrapping the
